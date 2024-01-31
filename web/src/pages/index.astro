@@ -1,9 +1,96 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/LayoutInit.astro';
+import Card from '../components/Card.astro';
 ---
 
 <html>
-<Layout title="Arneby">
-</Layout>
-	<h1 class="text-center text-3xl">Hola Arneby</h1>
+	<link rel="stylesheet" href="/src/css/styles.css">
+	<body class="flex justify-center">
+		<div class="w-full max-w-screen-lg">
+			<Layout title="Arneby">
+			</Layout>
+			<main>
+				<div class="container">
+					<div class="relative mt-10">
+						<a href="" class="flex rounded-3xl h-64 overflow-hidden">
+							<img src="/img/events.jpg" alt="eventImg" class="object-cover w-full h-auto filter brightness-50">	
+						</a>
+						<div class="absolute bottom-0 left-0 px-10 py-5 text-white">
+							<p class="text-3xl font-bold">Descubre nuevas experiencias</p>
+							<p class="text-lg">Con Arneby podras explorar nuevas aventuras</p>
+						</div>
+					</div>
+					<div class="mt-10">
+						<p class="text-3xl font-bold">¿Qué tipo de eventos te gustaria visitar?</p>
+						<div class="text-center">
+							<ul class="flex grid-cols-5 space-x-4 items-center font-bold pt-5">
+								<li>
+									<a href="" class="flex bg-green-200 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-full">
+										<span class="px-2">
+											Competiciones deportivas
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="" class="flex bg-green-200 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-full">
+										<span class="px-2">
+											Conciertos
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="" class="flex bg-green-200 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-full">
+										<span class="px-2">
+											Festivales
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="" class="flex bg-green-200 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-full">
+										<span class="px-2">
+											Hackatones
+										</span>
+									</a>
+								</li>
+								<li class="w-auto">
+									<a href="" class="flex bg-green-200 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-full">
+										<span class="px-2">
+											Más
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mt-10">
+						<div class="flex space-x-3">
+							<p class="text-3xl font-bold">Conoce lo más popular</p>
+							<img class="w-5 imageColor" src="/img/svg/fire-flame-curved-solid.svg" alt="">
+						</div>
+						<div class="mt-5" >
+							<div class="grid gap-2.5 grid-cols-4 max-w-screen-lg flex-row">
+								<Card >
+								</Card>
+								<Card >
+								</Card>
+								<Card >
+								</Card>
+								<Card >
+								</Card>
+							</div>
+						</div>
+					</div>
+					<div class="relative mt-10">
+						<a href="" class="flex rounded-3xl h-64 overflow-hidden">
+							<img src="/img/events.jpg" alt="eventImg" class="object-cover w-full h-auto filter brightness-50">	
+						</a>
+						<div class="absolute bottom-0 left-0 px-10 py-5 text-white">
+							<p class="text-3xl font-bold">Descubre nuevas experiencias</p>
+							<p class="text-lg">Con Arneby podras explorar nuevas aventuras</p>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
 </html>
