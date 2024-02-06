@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/LayoutInit.astro';
+import LayoutPublic from '../layouts/LayoutPublic.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title='Arneby'>
-	<div class="container">
+<LayoutPublic title='Arneby'>
+	<div class="block max-w-screen-lg">
 		<div class="relative mt-10">
 			<a href="" class="flex rounded-3xl h-64 overflow-hidden">
 				<img src="/img/events.jpg" alt="eventImg" class="object-cover w-full h-auto filter brightness-50">	
@@ -80,4 +80,4 @@ import Card from '../components/Card.astro';
 			</div>
 		</div>
 	</div>
-</Layout>
+</LayoutPublic>

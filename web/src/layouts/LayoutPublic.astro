@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import HeaderPublic from '../components/HeaderPublic.astro';
 interface Props {
 	title: string;
 }
@@ -19,7 +19,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
+		<HeaderPublic />
 		<main>
 			<div class="container mx-auto max-w-screen-lg">
 				<slot />
