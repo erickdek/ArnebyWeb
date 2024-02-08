@@ -11,7 +11,7 @@
                 Iniciar Sesion
               </h2>
             </div>
-          </div><form action="https://submit-form.com/r4PIGvAB">
+          </div><form id="login-form" action="https://submit-form.com/r4PIGvAB">
             <input name="hidden" autocomplete="false" style="display:none" />
             <input name="_redirect" type="hidden" value="#" /><div
               class="space-y-6">
@@ -20,12 +20,20 @@
                 >
                 <input
                   class="w-full focus:outline-none border py-3 appearance-none h-12 bg-gray-50 block border-gray-200 focus:bg-white focus:border-accent-500 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required=""
                   placeholder="Escriba su email..."
                 />
               </div><div class="col-span-full">
                 <label class="sr-only">Password</label>
                 <input
                   class="w-full focus:outline-none border py-3 appearance-none h-12 bg-gray-50 block border-gray-200 focus:bg-white focus:border-accent-500 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                  id="password"
+                  name="password"
+                  autocomplete="current-password"
+                  required=""
                   placeholder="Escriba su contraseña..."
                   type="password"
                 />
@@ -65,4 +73,50 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
+  <script>
+    async function registrarUsuario() {
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+
+    // Verificar si los elementos existen antes de acceder a sus valores
+    if (emailInput && passwordInput) {
+      const datosRegistro = {
+        email: emailInput.value,
+        password: passwordInput.value
+      };
+
+      try {
+        const respuesta = await fetch('https://api.arneby.com/v1/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(datosRegistro)
+        });
+
+        const datosRespuesta = await respuesta.json();
+        const token = datosRespuesta.token;
+
+        // Guardar el token en una cookie
+        document.cookie = `token=${token}; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/`;
+
+        console.log('Token guardado en la cookie:', token);
+        // Manejar la respuesta de la API aquí
+      } catch (error) {
+        console.error('Error al enviar los datos de registro:', error);
+      }
+    } else {
+      console.error('No se encontraron elementos de formulario.');
+    }
+  }
+  const registroForm = document.getElementById('registro-form');
+  if (registroForm) {
+    registroForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir que el formulario se envíe de manera predeterminada
+      registrarUsuario(); // Llamar a la función para registrar al usuario
+    });
+  } else {
+    console.error('No se encontró el formulario de registro.');
+  }
+</script>
