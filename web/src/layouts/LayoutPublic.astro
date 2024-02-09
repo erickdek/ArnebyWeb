@@ -1,5 +1,6 @@
 ---
 import HeaderPublic from '../components/HeaderPublic.astro';
+import Footer from '../components/Footer.astro'
 interface Props {
 	title: string;
 }
@@ -21,9 +22,10 @@ const { title } = Astro.props;
 	<body>
 		<HeaderPublic />
 		<main>
-			<div class="container mx-auto max-w-screen-lg">
+			<div class="container mx-auto max-w-screen-xl">
 				<slot />
 			</div>
 		</main>
+		<Footer />
 	</body>
 </html>
