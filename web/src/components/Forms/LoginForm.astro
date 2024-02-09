@@ -57,7 +57,7 @@
                 </div>
               </div><div class="col-span-full">
                 <button
-                  class="items-center h-12 justify-center rounded-xl focus-visible:outline-black focus:outline-none inline-flex bg-black border-2 border-black duration-200 focus-visible:ring-black hover:bg-transparent hover:border-black hover:text-black px-6 py-3 text-center text-white w-full"
+                  class="items-center h-12 justify-center rounded-xl focus-visible:outline-black focus:outline-none inline-flex bg-black border-2 border-black duration-200 focus-visible:ring-black hover:bg-transparent hover:border-black hover:text-black px-6 py-3 text-center text-white font-semibold w-full"
                   type="submit">Iniciar Sesion</button
                 >
               </div><div>
@@ -87,7 +87,7 @@
       };
 
       try {
-        const respuesta = await fetch('https://api.arneby.com/v1/login', {
+        const respuesta = await fetch('https://api.arneby.com/v1/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -96,7 +96,7 @@
         });
 
         const datosRespuesta = await respuesta.json();
-        const token = datosRespuesta.token;
+        const token = datosRespuesta.data.token;
 
         // Guardar el token en una cookie
         document.cookie = `token=${token}; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/`;
