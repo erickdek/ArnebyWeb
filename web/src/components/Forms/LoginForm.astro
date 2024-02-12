@@ -99,9 +99,11 @@
         const token = datosRespuesta.data.token;
 
         // Guardar el token en una cookie
-        document.cookie = `token=${token}; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/`;
+        var date = new Date();
+        date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toUTCString();
+        document.cookie = "token" + "=" + token + expires + "; path=/; Secure; SameSite=Strict";
 
-        console.log('Token guardado en la cookie:', token);
         // Manejar la respuesta de la API aquí
       } catch (error) {
         console.error('Error al enviar los datos de registro:', error);
@@ -110,6 +112,7 @@
       console.error('No se encontraron elementos de formulario.');
     }
   }
+
   const registroForm = document.getElementById('login-form');
   if (registroForm) {
     registroForm.addEventListener('submit', function(event) {

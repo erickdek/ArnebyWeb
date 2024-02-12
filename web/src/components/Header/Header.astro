@@ -1,0 +1,42 @@
+---
+import HeaderButtonsLogin from './HeaderButtonsLogin.astro';
+import HeaderButtonsAccount from './HeaderButtonsAccount.astro';
+const tokenCookie = Astro.cookies.get('token');
+let isLogged = true;
+
+if (tokenCookie && tokenCookie.value) {
+    isLogged = false;
+}
+---
+
+<header class="mt-8">
+    <div class="container mx-auto max-w-screen-xl">
+        <div class="block">
+            <nav class="flex">
+                <div >
+                    <a href="/" class="flex w-48 items-center">
+                        <img src="/img/svg/Logo txt.svg" alt="">
+                    </a>
+                </div>
+                <div class="flex ml-12 items-center">
+                    <ul class="flex space-x-4 font-bold items-center">
+                        <li>
+                            <a href=""><span class="">Eventos</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span class="">Match</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="font-bold container mx-auto">
+                    <div class="flex justify-end">
+
+                        {isLogged ? <HeaderButtonsLogin />: <HeaderButtonsAccount />}
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+    </div>
+</header>

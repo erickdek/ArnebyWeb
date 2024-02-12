@@ -130,16 +130,14 @@
           });
 
           const datosRespuesta = await respuesta.json();
-          console.log(datosRespuesta);
+          const token = datosRespuesta.data.token;
 
-          // Verificar si la respuesta contiene un token
-          if (datosRespuesta.data.token) {
-            // Guardar el token en una cookie con una duración de 7 días
-            document.cookie = `token=${datosRespuesta.data.token}; expires=${new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toUTCString()}; path=/`;
-            console.log('Token guardado en la cookie');
-          } else {
-            console.error('La respuesta de la API no contiene un token');
-          }
+          // Guardar el token en una cookie
+          var date = new Date();
+          date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+          var expires = "; expires=" + date.toUTCString();
+          document.cookie = "token" + "=" + token + expires + "; path=/; Secure; SameSite=Strict";
+          
         } catch (error) {
           console.error('Error al enviar los datos de registro:', error);
         }
