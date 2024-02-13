@@ -3,7 +3,149 @@ import Layout from '../layouts/LayoutInit.astro';
 ---
 
 <Layout title='Publish'>
-    <div class="container">
-
+    <div class="block m-7 max-w-screen-xl">
+        <div class="pt-10">
+            <h4 class="px-3 py-2 text-gray-500">Titulo</h4>
+            <input
+                class="w-full focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                name="titulo"
+                autocomplete="title"
+                required=""
+                placeholder="Escriba un titulo.."
+            />
+        </div>
+        <div class="pt-5">
+            <h4 class="px-3 py-2 text-gray-500">Descripcion</h4>
+            <textarea
+                class="w-full pt-3 align-text-top focus:outline-none appearance-none h-40 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm"
+                id="descripcion"
+                name="descripcion"
+                autocomplete="description"
+                required=""
+                placeholder="Escriba una descripcion.."
+            />
+            <div class="pt-5 flex">
+        </div>
+        <h4 class="px-3 py-2 text-black">Datos extra del evento</h4>
+        <div class="grid grid-cols-2 gap-4 justify-items-start">
+            <div class="py-2 w-80">
+                <h4 class="px-1 py-2  text-gray-500">Categoria</h4>
+                <select class="focus:outline-none w-full h-10 bg-gray-100 block focus:bg-gray-200 rounded-xl" name="categoria" id="categoria">
+                    <option value="Fiesta">Fiesta</option>
+                    <option value="Evento Deportivo">Evento Deportivo</option>
+                    <option value="Evento Coorporativo">Evento Coorporativo</option>
+                </select>
+            </div>
+            <div class="px-3 py-2 w-80">
+                <h4 class="px-1 py-2 text-gray-500">Tipo de Evento</h4>
+                <select class="focus:outline-none w-full h-10 bg-gray-100 block focus:bg-gray-200 rounded-xl" name="Modalidad" id="categoria">
+                    <option value="Presencial">Presencial</option>
+                    <option value="Virtual">Virtual</option>
+                </select>
+                
+            </div>
+        </div>
+        <div class="grid grid-cols-1 justify-items-start">
+            <div class="py-2">
+                <h4 class="px-1 py-2 text-gray-500">Precio</h4>
+                <div class="inset-y-0 right-0 items-center flex space-x-3 w-80">
+                    <input 
+                    type="text" 
+                    name="price" 
+                    id="price" 
+                    class="w-full focus:outline-none  py-3 appearance-none h-10 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500" 
+                    placeholder="0.00">
+                    <select id="moneda" name="moneda" class="px-2 pr-4 focus:outline-none w-64 h-10 bg-gray-100 block focus:bg-gray-200 rounded-xl">
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>CAD</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 justify-items-start">
+            <div class="py-2 w-80">
+                <h4 class="px-1 py-2  text-gray-500">Fecha Inicio</h4>
+                <input 
+                id="fecha_inicio"
+                name="fecha_inicio"
+                type="date" 
+                class="sticky w-full focus:outline-none  py-3 appearance-none h-10 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500">
+            </div>
+            <div class="px-3 py-2 w-80">
+                <h4 class="px-1 py-2 text-gray-500">Fecha Fin</h4>
+                <input 
+                id="fecha_fin"
+                name="fecha_fin"
+                type="date" 
+                class="sticky w-full focus:outline-none  py-3 appearance-none h-10 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500">
+            </div>
+        </div>
+        <div class="pt-5">
+            <h4 class="px-1 py-2 text-gray-500">Ubicacion</h4>
+            <iframe class="relative pt-2 w-full xl:max-w-screen-xl md:max-w-md lg:max-w-lg sm:max-w-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15959.075760142021!2d-79.2112659!3d-0.28506139999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1707810200660!5m2!1ses!2sec" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 gap-4 justify-items-start">
+            <div class="py-2 w-full">
+                <h4 class="px-1 py-2 text-gray-500">Latitud</h4>
+                <input
+                class="w-full focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                name="titulo"
+                autocomplete="title"
+                required=""
+                />
+            </div>
+            <div class=" py-2 w-full">
+                <h4 class="px-1 py-2 text-gray-500">Longitud</h4>
+                <input
+                class="w-full focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                name="titulo"
+                autocomplete="title"
+                required=""
+                />
+            </div>
+            <div class=" py-2 w-full">
+                <h4 class="px-1 py-2 text-gray-500">Pais</h4>
+                <input
+                class="w-full focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                name="titulo"
+                autocomplete="title"
+                required=""
+                />
+            </div>
+            <div class=" py-2 w-full">
+                <h4 class="px-1 py-2 text-gray-500">Provincia</h4>
+                <input
+                class="w-full focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                name="titulo"
+                autocomplete="title"
+                required=""
+                />
+            </div>
+        </div>
+        <div class="grid grid-cols-1">
+            <div class=" py-2 w-full">
+                <h4 class="px-1 py-2 text-gray-500">Dirección</h4>
+                <input
+                class="w-full focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                name="titulo"
+                autocomplete="title"
+                required=""
+                />
+            </div>
+        </div>
+        <div class="pt-8 grid grid-cols-1 justify-items-center">
+            <a href="/" class="flex bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-full">
+                <div class="mx-20 my-2 flex">
+                    <span class="text-left mx-2"> Publicar</span>
+                </div>
+            </a>
+        </div>
     </div>
 </Layout>
