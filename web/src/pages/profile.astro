@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/LayoutInit.astro';
+---
+
+<Layout title='Profile'>
+    <div class="pt-5 mt-10 mx-28 max-w-screen-xl grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 justify-items-center">
+            <h4 class="font-semibold pb-2">Foto de Perfil</h4>
+            <img class="h-80 w-80" src="../img/perfil.jpg" alt="">
+        </div>
+        <div >
+            <h4 class="ml-2 text-gray-600">Nombres:</h4>
+            <div class="py-3">
+                <label
+                class="w-[26rem] focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                for="">
+                Jordy Paul
+                </label>
+            </div>
+            <h4 class="ml-2 text-gray-600">Apellidos:</h4>
+            <div class="py-3">
+                <label
+                class="w-[26rem] focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                for="">
+                Mejia Palacios
+                </label>
+            </div>
+            <h4 class="ml-2 text-gray-600">Email:</h4>
+            <div class="py-3">
+                <label
+                class="w-[26rem] focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                for="">
+                jpmejia9@espe.edu.ec
+                </label>
+            </div>
+            <h4 class="ml-2 text-gray-600">Celular:</h4>
+            <div class="py-3">
+                <label
+                class="w-[26rem] focus:outline-none  py-3 appearance-none h-12 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+                id="titulo"
+                for="">
+                0996985860
+                </label>
+            </div>
+        </div>    
+    </div>
+    <div class="grid grid-cols-1 mt-5 mx-40">
+        <h4 class="ml-2 text-gray-600">Descripción:</h4>
+        <div class="py-3">
+            <label
+            class="w-full focus:outline-none py-3 appearance-none h-28 bg-gray-100 block focus:bg-gray-200 focus:ring-accent-500 placeholder-gray-400 px-3 rounded-xl sm:text-sm text-accent-500"
+            id="titulo"
+            for="">
+            La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio.
+            </label>
+        </div>
+    </div>
+</Layout>

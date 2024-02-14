@@ -8,6 +8,6 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'hybrid',
   adapter: node({
-    mode: "standalone"
+    mode: "middleware"
   })
 });
