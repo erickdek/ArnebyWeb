@@ -7,6 +7,8 @@ let isLogged = true;
 if (tokenCookie && tokenCookie.value) {
     isLogged = false;
 }
+
+export const prerender = true;
 ---
 
 <header class="mt-8">
