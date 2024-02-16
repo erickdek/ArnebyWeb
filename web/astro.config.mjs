@@ -1,6 +1,9 @@
-import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+import preact from "@astrojs/preact";
+import sitemap from "@astrojs/sitemap";
+import image from "@astrojs/image";
 import compress from "astro-compress";
+
 import node from "@astrojs/node";
 
 // https://astro.build/config
