@@ -2,13 +2,14 @@
 import HeaderButtonsLogin from './HeaderButtonsLogin.astro';
 import HeaderButtonsAccount from './HeaderButtonsAccount.astro';
 const tokenCookie = Astro.cookies.get('token');
-let isLogged = true;
+let isNotLogged = true;
 
 if (tokenCookie && tokenCookie.value) {
-    isLogged = false;
+    console.log("Token: " + tokenCookie.value);
+    isNotLogged = false;
 }
+console.log("Token: No Token");
 
-export const prerender = true;
 ---
 
 <header class="mt-8">
@@ -33,7 +34,7 @@ export const prerender = true;
                 <div class="font-bold container mx-auto">
                     <div class="flex justify-end">
 
-                        {isLogged ? <HeaderButtonsLogin />: <HeaderButtonsAccount />}
+                        {isNotLogged ? <HeaderButtonsLogin />: <HeaderButtonsAccount />}
                         
                     </div>
                 </div>

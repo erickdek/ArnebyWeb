@@ -4,6 +4,15 @@ import Header from '../components/Header/Header.astro';
 interface Props {
 	title: string;
 }
+console.info("Hola, Layoutinit");
+const tokenCookie = Astro.cookies.get('token');
+let isNotLogged = true;
+
+if (tokenCookie && tokenCookie.value) {
+    console.log("Token: " + tokenCookie.value);
+    isNotLogged = false;
+}
+console.log("Token: No Token");
 
 const { title } = Astro.props;
 ---
