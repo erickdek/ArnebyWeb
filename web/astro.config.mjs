@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
   adapter: node({
-    mode: "standalone"
+    mode: "middleware"
   }),
   integrations: [
     preact({
