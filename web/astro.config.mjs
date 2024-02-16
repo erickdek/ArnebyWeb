@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [
     compress({
       css: true,
-      html: false,
+      html: true,
       img: true,
       js: true,
       svg: false,
