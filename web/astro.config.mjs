@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import compress from "astro-compress";
-
+import tailwind from '@astrojs/tailwind';
 import node from "@astrojs/node";
 
 // https://astro.build/config
