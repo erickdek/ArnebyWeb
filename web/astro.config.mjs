@@ -1,7 +1,4 @@
 import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
-import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
 import compress from "astro-compress";
 
 import node from "@astrojs/node";
@@ -14,15 +11,6 @@ export default defineConfig({
     mode: "middleware"
   }),
   integrations: [
-    preact({
-      compat: true,
-    }),
-    sitemap({
-      customPages: ["https://kluzko.tech/about", "https://kluzko.tech/contact"],
-    }),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     compress({
       css: true,
       html: false,
